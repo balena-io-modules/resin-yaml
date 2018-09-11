@@ -1,0 +1,32 @@
+{
+  "name": "resin-yaml",
+  "version": "0.0.1",
+  "description": "Parse resin.yml files",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "npm run clean && tsc --project tsconfig.release.json",
+    "build:test": "npm run clean && tsc --project tsconfig.json",
+    "test": "npm run build:test && mocha build/test/*.js",
+    "prepublish": "require-npm4-to-publish",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resin-io-modules/resin-yaml.git"
+  },
+  "author": "Cameron Diver <cameron@resin.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/resin-io-modules/resin-yaml/issues"
+  },
+  "homepage": "https://github.com/resin-io-modules/resin-yaml#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "require-npm4-to-publish": "^1.0.0",
+    "typescript": "^3.0.3"
+  }
+}
